@@ -123,8 +123,8 @@
 
 .info-section {
   padding: 5rem 8%;
-  margin-top: 6rem;
-  height: 35vh;
+  margin-top: 0rem;
+  height: 30vh;
   color: #fff;
   text-align: center;
 }
@@ -168,21 +168,112 @@
     height: 100vh;
     display: grid;
     align-self: center;
-    grid-template-columns: 20% 20% 20% ;
-    grid-template-rows:20% 20% ;
-    row-gap: 5%;
+    grid-template-columns: 16% 16% 16% ;
+    grid-template-rows:18% 18% ;
+    row-gap: 15%;
     column-gap: 10%;
-    padding-left: 16%;
-    padding-top: 10%;
-    grid-auto-rows: 20%;
-    border: 2px solid black;
+    padding-left: 23%;
+    padding-top: 7%;
+    grid-auto-rows: 18%;
     background-color: #ffb703;
 }
 .locationgrid > div{
-    border: 2px solid black;
-    background-color: #1c1c1c;
+    background-image: url(images/18.1.webp);
     text-align: center;
     border-radius: 10px;
-    color: aliceblue;
+    color: aliceblue; 
+     background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
     
+    
+}
+.locationgrid {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 100px;
+  padding: 20px;
+  background-color: #c1bbbb;
+}
+
+.cards {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: white;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-info p {
+  margin: 2px 0;
+  font-size: 13px;
+}
+.booking-slide {
+  height: 100vh;
+  background-color:#c1bbbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+
+.booking-card h2{
+    position: relative;
+    bottom: 100px;
+    font-size: xx-large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.booking-card {
+  position: relative;
+  background: whitesmoke;
+  padding: 40px 50px;
+  border-radius: 12px;
+  width: 700px;
+  max-width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3,1fr);
+  gap: 20px;
+}
+
+.book-btn {
+  margin-top: 25px;
+  padding: 12px 30px;
+  border: 1px solid #333;
+  background: rgb(214, 197, 197);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: #333;
+  color: #fff;
 }

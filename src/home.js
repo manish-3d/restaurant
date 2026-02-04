@@ -2,11 +2,11 @@ function loadHome() {
   const content = document.getElementById("content");
   content.innerHTML = "";
 
-  /*WRAPPER (shared background)  */
+  /* WRAPPER */
   const heroWrapper = document.createElement("div");
   heroWrapper.classList.add("hero-wrapper");
 
-  /* HERO SECTION  */
+  /* HERO SECTION */
   const homeSection = document.createElement("section");
   homeSection.classList.add("home");
 
@@ -40,7 +40,7 @@ function loadHome() {
   overlay.appendChild(textBox);
   homeSection.append(heroSlider, overlay);
 
-  /* WHY CHOOSE US  */
+  /* WHY CHOOSE US */
   const infoSection = document.createElement("section");
   infoSection.classList.add("info-section");
 
@@ -72,43 +72,85 @@ function loadHome() {
 
   infoSection.append(infoHeading, cardContainer);
 
-  /* ============ APPEND EVERYTHING ============ */
   heroWrapper.append(homeSection, infoSection);
   content.appendChild(heroWrapper);
 
+  /* LOCATION GRID */
+  const locationgrid = document.createElement("div");
+  locationgrid.classList.add("locationgrid");
 
-/*location section*/
-const locationgrid = document.createElement("div");
-locationgrid.classList.add("locationgrid");
+  function createCard(city, img, phone, address) {
+    const card = document.createElement("div");
+    card.classList.add("cards");
+    card.style.backgroundImage = `url("${img}")`;
 
-const delhi = document.createElement("div");
-delhi.classList.add("cards");
+    const info = document.createElement("div");
+    info.classList.add("card-info");
 
-const mumbai = document.createElement("div");
-mumbai.classList.add("cards");
+    const title = document.createElement("h3");
+    title.textContent = city;
 
-const banglore = document.createElement("div");
-banglore.classList.add("cards");
+    const contact = document.createElement("p");
+    contact.textContent = phone;
 
-const goa = document.createElement("div");
-goa.classList.add("cards");
+    const addr = document.createElement("p");
+    addr.textContent = address;
 
-const jaipur = document.createElement("div");
-jaipur.classList.add("cards");
+    info.append(title, contact, addr);
+    card.appendChild(info);
 
-const pune = document.createElement("div");
-pune.classList.add("cards");
+    return card;
+  }
 
-const gurgaon = document.createElement("div");
-gurgaon.classList.add("cards");
+  locationgrid.append(
+    createCard("Jaipur","https://one8commune.co.in/wp-content/uploads/2024/03/DSC07198-1024x1536.webp","+91 9876543210","MI Road, Jaipur"),
+    createCard("Delhi","https://one8commune.co.in/wp-content/uploads/2024/03/LAH-09970-2.webp","+91 9123456780","Aerocity, New Delhi"),
+    createCard("Mumbai","https://one8commune.co.in/wp-content/uploads/2024/03/2-1024x1536.webp","+91 9988776655","Lower Parel, Mumbai"),
+    createCard("Gurgaon","https://one8commune.co.in/wp-content/uploads/2025/08/AMP-One8C-Set1-11-1.webp","+91 9090909090","Cyber Hub, Gurgaon"),
+    createCard("Pune","https://one8commune.co.in/wp-content/uploads/2025/05/One8Gurgaon.webp","+91 9012345678","Koregaon Park, Pune"),
+    createCard("Goa","https://one8commune.co.in/wp-content/uploads/2024/03/1.webp","+91 9345678901","Baga Beach, Goa"),
+    createCard("Bangalore","https://one8commune.co.in/wp-content/uploads/2024/03/DSC07198-1024x1536.webp","+91 9456789012","Indiranagar, Bangalore"),
+    createCard("Srinagar","https://one8commune.co.in/wp-content/uploads/2025/08/Lower-Parel-1.webp","+91 9567890123","Dal Lake Road, Srinagar"),
+    createCard("Greater Noida","https://one8commune.co.in/wp-content/uploads/2024/03/LAH-09970-2.webp","+91 9678901234","Pari Chowk, Greater Noida")
+  );
 
-const srinagar = document.createElement("div");
-srinagar.classList.add("cards");
+  content.appendChild(locationgrid);
 
-const greaternoida = document.createElement("div");
-greaternoida.classList.add("cards");
+  /* BOOKING SECTION  */
+  const bookingSlide = document.createElement("section");
+  bookingSlide.classList.add("booking-slide");
 
-locationgrid.append(jaipur,delhi,mumbai,gurgaon,pune,goa,banglore,srinagar,greaternoida);
-content.appendChild(locationgrid);
+  const bookingCard = document.createElement("div");
+  bookingCard.classList.add("booking-card");
+
+  const title = document.createElement("h2");
+  title.textContent = "BOOK YOUR TABLE";
+
+  const formGrid = document.createElement("div");
+  formGrid.classList.add("form-grid");
+
+  formGrid.innerHTML = `
+    <input placeholder="Your Name">
+    <input placeholder="Your Phone">
+    <select>
+      <option>Location</option>
+      <option>Delhi</option>
+      <option>Mumbai</option>
+      <option>Jaipur</option>
+    </select>
+    <input type="number" placeholder="People">
+    <input type="date">
+    <input type="time">
+  `;
+
+  const btn = document.createElement("button");
+  btn.classList.add("book-btn");
+  btn.textContent = "BOOK A TABLE";
+
+  bookingCard.append(title, formGrid, btn);
+  bookingSlide.appendChild(bookingCard);
+
+  content.appendChild(bookingSlide);
 }
+
 export default loadHome;

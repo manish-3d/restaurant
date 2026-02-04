@@ -174,9 +174,9 @@
     column-gap: 10%;
     padding-left: 23%;
     padding-top: 7%;
-    grid-auto-rows: 18%;
+    grid-auto-rows: 18%;   
     background-color: #ffb703;
-}
+} 
 .locationgrid > div{
     background-image: url(images/18.1.webp);
     text-align: center;

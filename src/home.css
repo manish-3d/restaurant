@@ -123,7 +123,8 @@
 
 .info-section {
   padding: 5rem 8%;
-  height: 70vh;
+  margin-top: 6rem;
+  height: 35vh;
   color: #fff;
   text-align: center;
 }
@@ -161,32 +162,27 @@
   transform: translateY(-10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
-/* ================= LOCATION SECTION ================= */
+/* location section */
 
-.location-section {
-  position: relative;
-  height: 100vh;
-  padding: 6rem 8%;
-  color: white;
-  text-align: center;
-
-  background-image: url("./images/pexels-sparkle-light-828531881-34396581.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.locationgrid{
+    height: 100vh;
+    display: grid;
+    align-self: center;
+    grid-template-columns: 20% 20% 20% ;
+    grid-template-rows:20% 20% ;
+    row-gap: 5%;
+    column-gap: 10%;
+    padding-left: 16%;
+    padding-top: 10%;
+    grid-auto-rows: 20%;
+    border: 2px solid black;
+    background-color: #ffb703;
 }
-
-/* DARK OVERLAY */
-.location-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 0;
-}
-
-/* CONTENT ABOVE OVERLAY */
-.location-section > * {
-  position: relative;
-  z-index: 1;
+.locationgrid > div{
+    border: 2px solid black;
+    background-color: #1c1c1c;
+    text-align: center;
+    border-radius: 10px;
+    color: aliceblue;
+    
 }

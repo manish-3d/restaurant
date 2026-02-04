@@ -2,18 +2,17 @@ function loadHome() {
   const content = document.getElementById("content");
   content.innerHTML = "";
 
-  /* ============ WRAPPER (shared background) ============ */
+  /*WRAPPER (shared background)  */
   const heroWrapper = document.createElement("div");
   heroWrapper.classList.add("hero-wrapper");
 
-  /* ================= HERO SECTION ================= */
+  /* HERO SECTION  */
   const homeSection = document.createElement("section");
   homeSection.classList.add("home");
 
   const heroSlider = document.createElement("div");
   heroSlider.classList.add("hero-slider");
 
-  // create 4 sliding images
   for (let i = 1; i <= 4; i++) {
     const slide = document.createElement("div");
     slide.classList.add("slide");
@@ -41,7 +40,7 @@ function loadHome() {
   overlay.appendChild(textBox);
   homeSection.append(heroSlider, overlay);
 
-  /* ================= WHY CHOOSE US ================= */
+  /* WHY CHOOSE US  */
   const infoSection = document.createElement("section");
   infoSection.classList.add("info-section");
 
@@ -73,46 +72,43 @@ function loadHome() {
 
   infoSection.append(infoHeading, cardContainer);
 
-  /* ================= LOCATIONS ================= */
-  const locationSection = document.createElement("section");
-  locationSection.classList.add("location-section");
+  /* ============ APPEND EVERYTHING ============ */
+  heroWrapper.append(homeSection, infoSection);
+  content.appendChild(heroWrapper);
 
-  const locationHeading = document.createElement("h2");
-  locationHeading.textContent = "Our Locations";
 
-  const locationsGrid = document.createElement("div");
-  locationsGrid.classList.add("locations-grid");
+/*location section*/
+const locationgrid = document.createElement("div");
+locationgrid.classList.add("locationgrid");
 
-  const locationData = [
-    { name: "Mumbai", image: "mumbai.jpg" },
-    { name: "Delhi", image: "delhi.jpg" },
-    { name: "Bangalore", image: "bangalore.jpg" },
-    { name: "Pune", image: "pune.jpg" },
-    { name: "Goa", image: "goa.jpg" },
-    { name: "Hyderabad", image: "hyderabad.jpg" },
-  ];
+const delhi = document.createElement("div");
+delhi.classList.add("cards");
 
-  locationData.forEach((loc) => {
-    const card = document.createElement("div");
-    card.classList.add("location-card");
-    card.style.backgroundImage = `url("./images/locations/${loc.image}")`;
+const mumbai = document.createElement("div");
+mumbai.classList.add("cards");
 
-    const overlay = document.createElement("div");
-    overlay.classList.add("location-overlay");
+const banglore = document.createElement("div");
+banglore.classList.add("cards");
 
-    const title = document.createElement("h3");
-    title.textContent = loc.name;
+const goa = document.createElement("div");
+goa.classList.add("cards");
 
-    overlay.appendChild(title);
-    card.appendChild(overlay);
-    locationsGrid.appendChild(card);
-  });
+const jaipur = document.createElement("div");
+jaipur.classList.add("cards");
 
-  locationSection.append(locationHeading, locationsGrid);
+const pune = document.createElement("div");
+pune.classList.add("cards");
 
-  /* ================= APPEND ================= */
-  heroWrapper.append(homeSection, infoSection, locationSection);
-  content.append(heroWrapper);
+const gurgaon = document.createElement("div");
+gurgaon.classList.add("cards");
+
+const srinagar = document.createElement("div");
+srinagar.classList.add("cards");
+
+const greaternoida = document.createElement("div");
+greaternoida.classList.add("cards");
+
+locationgrid.append(jaipur,delhi,mumbai,gurgaon,pune,goa,banglore,srinagar,greaternoida);
+content.appendChild(locationgrid);
 }
-
 export default loadHome;

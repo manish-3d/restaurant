@@ -2,11 +2,11 @@ function loadHome() {
   const content = document.getElementById("content");
   content.innerHTML = "";
 
-  /* WRAPPER */
+  /* ================= WRAPPER ================= */
   const heroWrapper = document.createElement("div");
   heroWrapper.classList.add("hero-wrapper");
 
-  /* HERO SECTION */
+  /* ================= HERO SECTION ================= */
   const homeSection = document.createElement("section");
   homeSection.classList.add("home");
 
@@ -19,9 +19,36 @@ function loadHome() {
     heroSlider.appendChild(slide);
   }
 
+  /* ================= OVERLAY ================= */
   const overlay = document.createElement("div");
   overlay.classList.add("home-overlay");
 
+  /* ===== BUTTON SECTION (FLEX) ===== */
+  const divBtnSec = document.createElement("div");
+  divBtnSec.classList.add("div-btn-sec");
+
+  const homeBtn = document.createElement("a");
+  homeBtn.textContent = "Home";
+  homeBtn.classList.add("btn");
+
+  const menuBtn = document.createElement("a");
+  menuBtn.textContent = "Menu";
+  menuBtn.classList.add("btn");
+
+  const locationBtn = document.createElement("a");
+  locationBtn.textContent = "Location";
+  locationBtn.classList.add("btn");
+
+  const bookBtn = document.createElement("a");
+  bookBtn.textContent = "Book Now";
+  bookBtn.classList.add("btn", "btn-primary");
+
+  const contactBtn = document.createElement("a");
+  contactBtn.textContent = "Contact Us";
+  contactBtn.classList.add("btn","contactBtn");
+  divBtnSec.append(contactBtn,homeBtn, menuBtn, locationBtn,bookBtn);
+
+  /* ===== TEXT CONTENT ===== */
   const textBox = document.createElement("div");
   textBox.classList.add("home-content");
 
@@ -32,15 +59,16 @@ function loadHome() {
   paragraph.textContent =
     "We serve the best food in town using fresh ingredients, unforgettable flavors, and a cozy atmosphere you’ll love.";
 
-  const button = document.createElement("button");
-  button.textContent = "Explore Menu";
-  button.classList.add("home-btn");
+  const exploreBtn = document.createElement("button");
+  exploreBtn.textContent = "Explore Menu";
+  exploreBtn.classList.add("home-btn");
 
-  textBox.append(heading, paragraph, button);
-  overlay.appendChild(textBox);
+  textBox.append(heading, paragraph, exploreBtn);
+
+  overlay.append(divBtnSec, textBox);
   homeSection.append(heroSlider, overlay);
 
-  /* WHY CHOOSE US */
+  /* ================= WHY CHOOSE US ================= */
   const infoSection = document.createElement("section");
   infoSection.classList.add("info-section");
 
@@ -75,7 +103,7 @@ function loadHome() {
   heroWrapper.append(homeSection, infoSection);
   content.appendChild(heroWrapper);
 
-  /* LOCATION GRID */
+  /* ================= LOCATION GRID ================= */
   const locationgrid = document.createElement("div");
   locationgrid.classList.add("locationgrid");
 
@@ -106,17 +134,12 @@ function loadHome() {
     createCard("Jaipur","https://one8commune.co.in/wp-content/uploads/2024/03/DSC07198-1024x1536.webp","+91 9876543210","MI Road, Jaipur"),
     createCard("Delhi","https://one8commune.co.in/wp-content/uploads/2024/03/LAH-09970-2.webp","+91 9123456780","Aerocity, New Delhi"),
     createCard("Mumbai","https://one8commune.co.in/wp-content/uploads/2024/03/2-1024x1536.webp","+91 9988776655","Lower Parel, Mumbai"),
-    createCard("Gurgaon","https://one8commune.co.in/wp-content/uploads/2025/08/AMP-One8C-Set1-11-1.webp","+91 9090909090","Cyber Hub, Gurgaon"),
-    createCard("Pune","https://one8commune.co.in/wp-content/uploads/2025/05/One8Gurgaon.webp","+91 9012345678","Koregaon Park, Pune"),
-    createCard("Goa","https://one8commune.co.in/wp-content/uploads/2024/03/1.webp","+91 9345678901","Baga Beach, Goa"),
-    createCard("Bangalore","https://one8commune.co.in/wp-content/uploads/2024/03/DSC07198-1024x1536.webp","+91 9456789012","Indiranagar, Bangalore"),
-    createCard("Srinagar","https://one8commune.co.in/wp-content/uploads/2025/08/Lower-Parel-1.webp","+91 9567890123","Dal Lake Road, Srinagar"),
-    createCard("Greater Noida","https://one8commune.co.in/wp-content/uploads/2024/03/LAH-09970-2.webp","+91 9678901234","Pari Chowk, Greater Noida")
+    createCard("Gurgaon","https://one8commune.co.in/wp-content/uploads/2025/08/AMP-One8C-Set1-11-1.webp","+91 9090909090","Cyber Hub, Gurgaon")
   );
 
   content.appendChild(locationgrid);
 
-  /* BOOKING SECTION  */
+  /* ================= BOOKING SECTION ================= */
   const bookingSlide = document.createElement("section");
   bookingSlide.classList.add("booking-slide");
 
@@ -149,7 +172,6 @@ function loadHome() {
 
   bookingCard.append(title, formGrid, btn);
   bookingSlide.appendChild(bookingCard);
-
   content.appendChild(bookingSlide);
 }
 

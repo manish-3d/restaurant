@@ -277,3 +277,36 @@
   background: #333;
   color: #fff;
 }
+.div-btn-sec {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 7%;
+
+  gap: 3rem;
+  justify-content: center;
+}
+
+
+.btn:hover {
+  background-color: #333;
+  color: white;
+}
+
+.btn {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border:2px linen black;
+}
+
+.contactBtn{
+    position:static;
+    right: 1250px;
+    bottom: 20px;
+    
+}
